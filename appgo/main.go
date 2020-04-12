@@ -23,7 +23,7 @@ func main() {
 
 	r.Use(gin.Recovery())
 
-	r = router.CollectRoute(r)
+	r = router.InitRouter(r)
 
 	port := viper.GetString("server.port")
 	if port != "" {

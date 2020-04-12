@@ -34,11 +34,26 @@ func InitDB() *gorm.DB {
 		panic("failed to connect database,err" + err.Error())
 	}
 
-	//创建数据表
-	db.AutoMigrate(&model.User{})
+	createTables(db)
 
 	DB = db
 	return db
+}
+
+//createTables 创建数据表 .
+func createTables(db *gorm.DB) {
+
+	db.AutoMigrate(&model.User{})
+
+	//home
+	db.AutoMigrate(&model.BannerList{})
+	db.AutoMigrate(&model.LocalNavList{})
+	db.AutoMigrate(&model.GridNavSubMainItem{})
+	db.AutoMigrate(&model.GridNavSub{})
+	db.AutoMigrate(&model.GridNav{})
+	db.AutoMigrate(&model.SubNavList{})
+	db.AutoMigrate(&model.SalesBox{})
+	// db.AutoMigrate(&model.BannerList{})
 }
 
 //GetDB .

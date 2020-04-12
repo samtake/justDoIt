@@ -4,6 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
+//User .
 type User struct {
 	gorm.Model
 	Name      string `gorm:"type:varchar(20);not null"`
