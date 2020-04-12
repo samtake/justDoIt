@@ -60,7 +60,7 @@ func Register(ctx *gin.Context) {
 	DB.Create(&newUser)
 
 	//返回结果
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, nil, "注册成功")
+	response.Success(ctx, nil, "注册成功")
 }
 
 //Login 登录.
@@ -99,7 +99,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, gin.H{"token": token}, "登录成功")
+	response.Success(ctx, gin.H{"token": token}, "登录成功")
 
 }
 
@@ -107,7 +107,7 @@ func Login(ctx *gin.Context) {
 func Info(ctx *gin.Context) {
 	user, _ := ctx.Get("user")
 
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, gin.H{"user": dto.ToUserDto(user.(model.User))}, "")
+	response.Success(ctx, gin.H{"user": dto.ToUserDto(user.(model.User))}, "")
 }
 
 //isTelephoneExist .0

@@ -32,5 +32,5 @@ func SalesBox(ctx *gin.Context) {
 	common.GetDB().Create(&newSalesBox)
 
 	//返回结果
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, nil, "修改成功")
+	response.Success(ctx, nil, "修改成功")
 }

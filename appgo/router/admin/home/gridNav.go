@@ -30,7 +30,7 @@ func GridNavMain(ctx *gin.Context) {
 	common.GetDB().Create(&newGridNavSub)
 
 	//返回结果
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, nil, "修改成功")
+	response.Success(ctx, nil, "修改成功")
 }
 
 //GridNavItem  .
@@ -58,5 +58,5 @@ func GridNavItem(ctx *gin.Context) {
 	common.GetDB().Create(&newGridNavSubMainItem)
 
 	//返回结果
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, nil, "修改成功")
+	response.Success(ctx, nil, "修改成功")
 }

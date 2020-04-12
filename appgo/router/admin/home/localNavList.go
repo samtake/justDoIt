@@ -22,7 +22,7 @@ func LocalNavList(ctx *gin.Context) {
 	}
 
 	if len(icon) == 0 || len(title) == 0 || len(url) == 0 || len(statusBarColor) == 0 {
-		response.Response(ctx, http.StatusServiceUnavailable, 422, nil, "参数不完成")
+		response.Response(ctx, http.StatusServiceUnavailable, 422, nil, "参数不齐")
 
 		return
 	}
@@ -39,5 +39,5 @@ func LocalNavList(ctx *gin.Context) {
 	DB.Create(&newLocalNavList)
 
 	//返回结果
-	response.Response(ctx, http.StatusUnprocessableEntity, 200, nil, "修改成功")
+	response.Success(ctx, nil, "修改成功")
 }
