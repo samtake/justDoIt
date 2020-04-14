@@ -52,32 +52,33 @@ const router = new Router({
           meta: { icon: "form", title: "首页", authority: ["admin"] },
           children: [
             {
-              path: "/home/basic-home",
-              name: "basichome",
-              meta: { title: "基础表单" },
-              component: () =>
-                import(/* webpackChunkName: "form" */ "./views/Home/BasicHome")
-            },
-            {
-              path: "/form/step-home",
-              name: "stephome",
-              hideChildrenInMenu: true,
-              meta: { title: "分布表单" },
-              component: () =>
-                import(/* webpackChunkName: "form" */ "./views/Home/StepHome"),
-              children: [
-                {
-                  path: "/form/step-home",
-                  redirect: "/form/step-home/info"
-                },
-                {
-                  path: "/form/step-home/info",
-                  name: "info",
-                  component: () =>
-                    import(/* webpackChunkName: "form" */ "./views/Home/StepHome/BannerList")
-                }
-              ]
-            }
+                path: "/home/bannerList",
+                name: "homeBannerList",
+                meta: { title: "BannerList" },
+                component: () =>
+                  import(/* webpackChunkName: "form" */ "./views/Home/BannerList")
+              },
+              {
+                path: "/home/localNavList",
+                name: "homeLocalNavList",
+                meta: { title: "LocalNavList" },
+                component: () =>
+                  import(/* webpackChunkName: "form" */ "./views/Home/LocalNavList")
+              },
+              {
+                path: "/home/GridNav",
+                name: "homeGridNav",
+                meta: { title: "GridNav" },
+                component: () =>
+                  import(/* webpackChunkName: "form" */ "./views/Home/GridNav")
+              },
+              {
+                path: "/home/salesBox",
+                name: "homeSalesBox",
+                meta: { title: "SalesBox" },
+                component: () =>
+                  import(/* webpackChunkName: "form" */ "./views/Home/SalesBox")
+              },
           ]
         }
       ]

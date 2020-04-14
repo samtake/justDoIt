@@ -1,5 +1,5 @@
 <template>
-  <div>基础表单</div>
+  <div>第一步</div>
 </template>
 
 <script>
